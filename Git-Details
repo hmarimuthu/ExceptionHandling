@@ -1,0 +1,123 @@
+To get a git repo from github to your local:
+git@github.com:tonypujals/express-demo.git
+
+command: git clone git@github.com:tonypujals/express-demo.git
+
+Check to see if git is installed:  git —-version.
+
+To get a git repo from github to your local:
+git@github.com:tonypujals/express-demo.git
+
+command: git clone git@github.com:tonypujals/express-demo.git
+
+After you clone - you can start working on the code locally. once completed you have to commit back to Git.
+
+First do git init on the parent folder.
+
+Then git status
+
+Then git add
+
+Then git commit -m “Completed my Work”  ( this just saves ur changes locally)
+
+Then git remote -v ( to check if you are committing to the same location)
+
+Then git push origin master.
+
+If you have not worked on master and if other person worked on master too and he happens to commit before you. You cannot push. You have to pull before you push.
+
+After you pull you have to resolve conflicts ( locally using any editor STS ( merge tool and mark as merged after you resolve ) and then push.
+
+Suppose you want to commit to you local git hub.
+
+First you have to take a copy of the folder , paste it in a different location, delete .git files.
+
+Then do git init on that folder .
+
+Now you have to add your SSH Key to your github account if it is a new machine.
+
+To do that:
+
+- Open Terminal.
+
+- Enter ls -al ~/.ssh to see if existing SSH keys are present:
+
+- ls -al ~/.ssh
+# Lists the files in your .ssh directory, if they exist
+
+
+
+
+
+- Check the directory listing to see if you already have a public SSH key.
+
+By default, the filenames of the public keys are one of the following:
+
+- id_dsa.pub
+- id_ecdsa.pub
+- id_ed25519.pub
+
+- id_rsa.pub
+
+- If you don't have an existing public and private key pair, or don't wish to use any that are available to connect to GitHub, then generate a new SSH key.
+
+- If you see an existing public and private key pair listed (for example id_rsa.pub and id_rsa) that you would like to use to connect to GitHub, you can add your SSH key to the ssh-agent.
+
+Best is to generate new one:
+
+- Open Terminal.
+
+- Paste the text below, substituting in your GitHub email address.
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# Creates a new ssh key, using the provided email as a label
+Generating public/private rsa key pair.
+
+
+
+
+
+- When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+
+
+
+
+
+- At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
+
+- Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+
+
+
+
+
+Adding your SSH key to the ssh-agent
+
+Before adding a new SSH key to the ssh-agent, you should have checked for existing SSH keys andgenerated a new SSH key.
+
+- Ensure ssh-agent is enabled:
+# start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+Agent pid 59566
+
+
+
+
+
+- Add your SSH key to the ssh-agent. If you used an existing SSH key rather than generating a new SSH key, you'll need to replace id_rsa in the command with the name of your existing private key file.
+
+- $ ssh-add ~/.ssh/id_rsa
+
+
+
+
+- Add the SSH key to our GitHub account.
+
+
+
+To add new repositories:
+
+git remote add origin https://github.com/hmarimuthu/ExceptionHandling.git
+
+then to check use :  git remote -v
